@@ -70,7 +70,7 @@ function getImages($directory) {
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>jocarsa | seagreen</title>
+    <title>jocarsa | thistle</title>
     <link rel="icon" type="image/svg+xml" href="https://jocarsa.com/static/logo/thistle.png" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
@@ -146,8 +146,9 @@ function getImages($directory) {
             width: 20%;
             background: thistle;
             color:white;
-            border-right: 1px solid #ccc;
+            border-right: 0px solid #ccc;
             padding: 1rem;
+            padding-right:0px;
         }
         .left-pane h3 {
             margin-top: 0;
@@ -162,17 +163,21 @@ function getImages($directory) {
             margin: 0.5rem 0;
             padding:10px;
             border-bottom:1px solid rgba(255,255,255,0.2);
+            color:white;
         }
         .folder-list a {
             color: #333;
             text-decoration: none;
             font-weight: bold;
-           
+           color:white;
             width:100%;
         }
-        .folder-list a.selected {
-            color: white;
-            
+        .selected {
+            color: thistle;
+            background:#f5f5f5;
+        }
+        .selected a{
+        	color:thistle;
         }
         .right-pane {
             width: 80%;
@@ -308,7 +313,7 @@ margin:0px;
                     $selectedClass = ($sf === $currentSubfolder) ? 'selected' : '';
                     // Build the URL with the subfolder param
                     $url = $_SERVER['PHP_SELF'] . '?subfolder=' . urlencode($sf);
-                    echo "<li><a class=\"$selectedClass\" href=\"$url\">$sf</a></li>";
+                    echo "<li class=\"$selectedClass\" ><a href=\"$url\">$sf</a></li>";
                 endforeach;
                 ?>
             </ul>

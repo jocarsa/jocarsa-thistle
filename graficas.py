@@ -98,6 +98,10 @@ if __name__ == "__main__":
             data2 = fetch_data(config_file, f"CALL VisitasUltimos15Dias('{virtualhost}');")
             if data2:
                 save_bar_chart(data2, subfolder, f"{virtualhost}_visitas_ultimos_15_dias")
+                
+            data2 = fetch_data(config_file, f"CALL IPs15ultimosdias('{virtualhost}');")
+            if data2:
+                save_bar_chart(data2, subfolder, f"{virtualhost}_IP_ultimos_15_dias")
 
         print(f"Charts saved in the '{base_folder}' folder.")
     else:
