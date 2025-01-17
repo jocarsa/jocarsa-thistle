@@ -94,6 +94,10 @@ if __name__ == "__main__":
             data2 = fetch_data(config_file, f"CALL CodigosDeEstado('{virtualhost}');")
             if data2:
                 save_pie_chart(data2, subfolder, f"{virtualhost}_codigos_de_estado")
+                
+            data2 = fetch_data(config_file, f"CALL VisitasUltimos15Dias('{virtualhost}');")
+            if data2:
+                save_pie_chart(data2, subfolder, f"{virtualhost}_visitas_ultimos_15_dias")
 
         print(f"Charts saved in the '{base_folder}' folder.")
     else:
