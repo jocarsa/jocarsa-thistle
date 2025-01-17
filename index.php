@@ -71,7 +71,7 @@ function getImages($directory) {
 <head>
     <meta charset="UTF-8" />
     <title>jocarsa | seagreen</title>
-    <link rel="icon" type="image/svg+xml" href="https://jocarsa.com/static/logo/jocarsa | Thistle.svg" />
+    <link rel="icon" type="image/svg+xml" href="https://jocarsa.com/static/logo/thistle.png" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
         body {
@@ -238,10 +238,16 @@ function getImages($directory) {
 	justify-content: center;
 	align-items: center;
 	align-content: stretch;
-
+margin:0px;
         }
         h1 img{
             width:60px;
+        }
+         form img{
+        	width:100%;
+        }
+        input{
+        	box-sizing:border-box;
         }
     </style>
     <script>
@@ -257,6 +263,7 @@ function getImages($directory) {
             modalImage.src = '';
             modalOverlay.style.display = 'none';
         }
+       
     </script>
 </head>
 <body>
@@ -264,11 +271,12 @@ function getImages($directory) {
 <?php if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true): ?>
     <!-- LOGIN FORM -->
     <div class="login-container">
-        <h2>Login</h2>
+        <h2>jocarsa | thistle</h2>
         <?php if (isset($login_error)): ?>
             <div class="login-error"><?php echo $login_error; ?></div>
         <?php endif; ?>
         <form method="post" action="">
+        <img src="https://jocarsa.com/static/logo/thistle.png">
             <input type="text" name="username" placeholder="Usuario" required />
             <input type="password" name="password" placeholder="Contraseña" required />
             <input type="submit" value="Entrar" />
@@ -281,7 +289,7 @@ function getImages($directory) {
     <!-- NAVIGATION -->
     <nav>
     <h1>
-                <img src="https://jocarsa.com/static/logo/jocarsa | White.svg" alt="Logo">jocarsa | thistle
+                <img src="https://jocarsa.com/static/logo/thistle.png" alt="Logo">jocarsa | thistle
             </h1>
         <span>Usuario: <?php echo USERNAME; ?></span>
         <a href="?action=logout">Cerrar Sesión</a>
